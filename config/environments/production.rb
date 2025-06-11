@@ -64,6 +64,7 @@ Rails.application.configure do
 
   # 啟用 harmony 模式，讓 Uglifier 支援 ES6
 config.assets.js_compressor = Uglifier.new(harmony: true)
+config.active_storage.service = :local
 
 
   # Ignore bad email addresses and do not raise email delivery errors.
