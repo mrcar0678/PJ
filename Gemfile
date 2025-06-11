@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '~> 3.3.1'
+ruby '~> 3.3.0'
 
 #gem 'mimemagic', '~> 0.3.3'
 #gem 'mimemagic', '~> 0.4.2'
 
-gem 'nokogiri', '~> 1.10', '>= 1.10.3'
+gem 'nokogiri', '~> 1.16'
+
 
 gem 'crass', '~> 1.0', '>= 1.0.4'
 
