@@ -46,10 +46,11 @@ gem 'jbuilder', '~> 2.5'
 #group :production do
  #gem 'pg'
 #end
-gem 'pg', '~> 1.4'
+#gem 'pg', '~> 1.4'
 
 group :development, :test do
  gem 'sqlite3'
+ gem 'pg', group: :production
 end
 
  
