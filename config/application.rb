@@ -1,4 +1,5 @@
 require_relative 'boot'
+puts "RAILS_MASTER_KEY: #{ENV['RAILS_MASTER_KEY'].present? ? 'Loaded' : 'Missing'}"
 
 require "rails"
 require 'rails/all'
