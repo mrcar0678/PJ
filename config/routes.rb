@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :line
   resources :push_messages
   get 'push/messages'
+  get '/cron', to: 'cron#run'
   post '/line/webhook', to: 'line#webhook'
   resources :careyoualls
   resources :care_yous
