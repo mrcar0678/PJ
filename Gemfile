@@ -8,6 +8,10 @@ ruby '~> 3.3.0'
 
 gem 'nokogiri', '~> 1.16'
 
+gem 'addressable'
+
+
+gem 'httparty'
 
 gem 'crass', '~> 1.0', '>= 1.0.4'
 

@@ -1,5 +1,24 @@
 class EventProcessor
+  require_relative '../services/girl_image_fetcher'
+
   def process(text, event)
+    puts "👤 用戶輸入：#{text}"
+    puts "📦 Event：#{event.inspect}"
+   
+if text == "抽"
+      image_url = GirlImageFetcher.random_image_url
+      if image_url
+        return {
+          type: 'image',
+          originalContentUrl: image_url,
+          previewImageUrl: image_url
+        }
+      else
+        return { type: 'text', text: '抱歉，抓取圖片失敗，請稍後再試。' }
+      end
+    end
+
+
 
  channel_id = event["source"]["userId"]
  @b = Ama2.where(a: channel_id )[0]&.b
@@ -44,6 +63,9 @@ return ky2 if ["奠禮" , "奠禮後" , "注意事項"  , "禁忌","注意"].inc
 return ky3 if ["入殮" , "小殮" , "大殮", "遺體保存"].include? text
 
 return ky4 if ["打桶" , "保存" , "遺體保存", "遺體存放"].include? text
+
+
+  
 
 #禮儀師團隊####################################################
 return member_1 if  text == "禮儀團隊"
@@ -109,6 +131,7 @@ return test_17  if  text[-11] == '/'
 return abc if text == "送出表單"
 
 end 
+
 
 
 

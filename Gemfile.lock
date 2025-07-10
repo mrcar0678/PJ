@@ -70,6 +70,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     archive-zip (0.12.0)
       io-like (~> 0.3.0)
+    bigdecimal (3.2.2)
     bindex (0.8.1)
     bootsnap (1.15.0)
       msgpack (~> 1.2)
@@ -96,6 +97,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    csv (3.3.5)
     date (3.3.3)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
@@ -107,6 +109,10 @@ GEM
     ffi (1.15.5)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    httparty (0.23.1)
+      csv
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     io-like (0.3.1)
@@ -129,6 +135,8 @@ GEM
     mini_portile2 (2.8.6)
     minitest (5.16.3)
     msgpack (1.6.0)
+    multi_xml (0.7.2)
+      bigdecimal (~> 3.1)
     net-imap (0.3.4)
       date
       net-protocol
@@ -242,6 +250,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  addressable
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15)
@@ -250,6 +259,7 @@ DEPENDENCIES
   crass (~> 1.0, >= 1.0.4)
   dotenv-rails (~> 2.7)
   duktape
+  httparty
   jbuilder (~> 2.5)
   line-bot-api (~> 1.9)
   loofah (~> 2.2, >= 2.2.3)

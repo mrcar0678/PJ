@@ -1,10 +1,23 @@
 require 'line/bot'
+
+require 'nokogiri'
+require 'httparty'
+require 'uri'
 class LineController < ActionController::API
 #protect_from_forgery with: :null_session
   before_action :read_body
   before_action :validate_signature
   before_action :read_events
-  
+
+ # 爬取圖片列表
+
+
+
+
+
+
+
+
   def webhook
     @events.each do |event|
       process_event(event)
@@ -18,11 +31,22 @@ class LineController < ActionController::API
     reply_token = event["replyToken"]
     return if reply_token.nil?
     
+      # 避免重複事件
+  event_id = event["webhookEventId"]
+  return if EventRecord.exists?(event_id: event_id)
+ 
 
     text = event["message"] && event["message"]["text"] || event["type"]
     puts ""
     puts "用戶的輸入: #{text}"
     puts ""
+
+
+
+
+
+
+
 
 
    
@@ -209,11 +233,6 @@ class LineController < ActionController::API
   
 
 
-
-
-
-
-
     puts ""
     puts "聊天機器人的回應: #{message}"
     puts ""
@@ -224,7 +243,8 @@ class LineController < ActionController::API
     puts ""
     puts "Line的回應: #{response.body}"
     puts ""
-
+  # 紀錄事件，避免重複回覆
+  EventRecord.create!(event_id: event_id)
    
   end
 
