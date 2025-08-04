@@ -33,7 +33,7 @@ def process_event(event)
       puts "[ERROR] 油價爬蟲錯誤：#{e.message}"
       message = { type: 'text', text: '油價資訊取得失敗，請稍後再試。' }
     end
-
+  end
   
 
   response = client.reply_message(event['replyToken'], message)
