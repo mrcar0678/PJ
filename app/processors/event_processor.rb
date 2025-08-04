@@ -34,12 +34,7 @@ def process_event(event)
       message = { type: 'text', text: '油價資訊取得失敗，請稍後再試。' }
     end
 
-  else
-    message = {
-      type: 'text',
-      text: "請輸入「抽」抽美女圖，或輸入「油價」查詢最新油價資訊。"
-    }
-  end
+  
 
   response = client.reply_message(event['replyToken'], message)
   puts "[DEBUG] LINE 回覆狀態：#{response.code}，回應內容：#{response.body}"
