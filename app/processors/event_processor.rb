@@ -44,3 +44,4 @@ def process_event(event)
   response = client.reply_message(event['replyToken'], message)
   puts "[DEBUG] LINE 回覆狀態：#{response.code}，回應內容：#{response.body}"
 end
+end
