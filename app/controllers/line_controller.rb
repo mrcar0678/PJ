@@ -52,11 +52,7 @@ class LineController < ApplicationController
       message_text = OilPriceFetcher.fetch
       message = { type: 'text', text: message_text }
 
-    else
-      message = {
-        type: 'text',
-        text: "請輸入「抽」抽美女圖，或輸入「油價」查詢最新油價資訊。"
-      }
+
     end
 
     client.reply_message(event['replyToken'], message)
