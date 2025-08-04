@@ -1,3 +1,4 @@
+class EventProcessor
 def process_event(event)
   return unless event.is_a?(Line::Bot::Event::Message)
   return unless event.type == Line::Bot::Event::MessageType::Text
